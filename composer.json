@@ -1,0 +1,22 @@
+{
+    "name": "avikarsha/veritrans",
+    "description" : "veritrans",
+    "authors": [
+        {
+            "name": "Avikarsha Saha",
+            "email": "avikarsha.saha@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "slim/slim": "2.6.1",
+        "illuminate/database": "*",
+        "entomb/slim-json-api": "dev-master"
+    },
+    "autoload": {
+        "classmap": [
+            "src/models"
+        ]
+    }
+}

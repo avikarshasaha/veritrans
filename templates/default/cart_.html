@@ -1,0 +1,120 @@
+<section class="white_bg in_top_space">
+{% if delete == 1 %} <div class="alert alert-success" role="alert">Succefully deleted one job.</div>{% endif %}
+
+{% if grand_total != 0 %}
+<form action="{{ baseUrl() }}/order_placed" name="oreder-placed" id="oreder-placed" method="post">
+<div class="container">
+      <div class="page_title1  orange_h1 top_space3">
+    <h1 class="gray_text">Your Order Cart</h1>
+  </div>
+    {% for job in jobs %}
+    <div class="box1 job_box1">
+    <div class="orange_title_bg">
+    Job {{loop.index}}
+    <span> 
+        <a class="delete" data-id="{{job.id}}"><i class="fa fa-trash fa-border"></i></a>
+    </sapn> 
+    </div>
+
+    <div class="gray_bg">
+    {{job.package_name}}
+    <span>${{job.package_cost}}</span>
+    </div>
+
+    <div class="gray_bg">
+    {{job.delivery_time}} Hour
+    <span>${{job.delivery_time_cost}}</span>
+    </div>
+
+    
+    <div class="gray_bg">
+    {{job.layout_type}}
+    <span>${{job.layout_type_cost}}</span>
+    </div>
+
+    <div class="gray_bg">
+    No of email
+    <span>{{job.no_of_email}}</span>
+    </div>
+    
+    
+    <div class="gray_bg_center">
+   Estimated delivery time: 
+ <span>{{job.estimated_time}} | GMT </span> 
+   <div class="clr"></div>
+    </div>
+    
+    <div class="dark_gray_bg">
+    Total
+    <span>${{job.total}}</span>
+    </div>
+    
+    </div>
+    {% endfor %}
+
+	<div class="clr"></div>
+    
+    <div class="grandt">
+    Grand Total
+    <span>${{grand_total}}</span>
+    </div>
+    
+    <div class="box1 ">
+   
+    
+  
+    
+    
+    <div class="orange_title_bg border_buttom_3">
+   Place Your Order Below
+    </div>
+    
+     <div class="gray_bg bg_none">
+    <input type="checkbox" name="terms" id="check1" required/>
+        <label for="check1">
+            <span class="fa-stack">
+                <i class="fa fa-square-o fa-stack-1x fa-lg"></i>
+                <i class="fa fa-check-square fa-stack-1x  fa-lg"></i>
+            </span>
+         I accept the Terms and Conditions.
+        </label>
+    </div>
+    
+     <div class="gray_bg bg_none">
+    <input type="checkbox" name="option2" id="check2" />
+        <label for="check2">
+            <span class="fa-stack">
+                <i class="fa fa-square-o fa-stack-1x fa-lg"></i>
+                <i class="fa fa-check-square fa-stack-1x fa-lg"></i>
+            </span>
+         I would like to signup for the newsletter.
+        </label>
+    </div>
+    
+    <button type="submit" class="gray_btn top_space_btn"> Place your order now!</button>
+    
+    
+    </div>
+      <div class="or_box">Or</div>
+    <div class="box1 ">
+    <a class="gray_btn orange_bg reset"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left "></i> Add More Jobs to Cart</a>
+    <div class="m_back">
+    <img src="img/money_back.png" alt="Money Back" />
+    </div>
+    <div class="we_accept_box">
+    <div class="box_title">We accept:</div>
+    <div class="card_box"> <img src="img/card-image.png" alt="card" /> </div>
+     <a class="gray_btn top_space_btn sm_text1">100% money back guarantee</a>
+    </div>
+    </div>
+    
+    
+    
+    
+    </div>
+    <div class="clr"></div>
+</form>
+{% endif %}
+</section>
+
+<div class="clr"></div>

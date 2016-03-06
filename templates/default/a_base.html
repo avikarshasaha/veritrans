@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{settings.title}}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="{{ baseUrl() }}/css/bootstrap.min.css" rel="stylesheet">
+		<link href="{{ baseUrl() }}/css/roboto.min.css" rel="stylesheet">
+		<!-- <link href="{{ baseUrl() }}/css/material-fullpalette.min.css" rel="stylesheet"> -->
+		<link href="{{ baseUrl() }}/css/ripples.min.css" rel="stylesheet">
+        <!-- <link href="{{ baseUrl() }}/css/custom.css" rel="stylesheet"> -->
+
+        <script src="{{ baseUrl() }}/js/jquery.js"></script>
+        <script src="{{ baseUrl() }}/jqueryui/jquery-ui.js"></script>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        {% if user is empty %}
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">{{ include(template_from_string(lang.togglenav)) }}</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ baseUrl() }}/admin">{{settings.title}}</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ baseUrl() }}/admin/login"><span class="glyphicon glyphicon-tower"></span> {{ include(template_from_string(lang.admin)) }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {% else %}
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">{{ include(template_from_string(lang.togglenav)) }}</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="{{ baseUrl() }}/admin">{{settings.title}}</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{ baseUrl() }}/admin"> Home</a></li>
+                            <li><a href="{{ baseUrl() }}/admin/orders"> Order</a></li>
+                            <li><a href="{{ baseUrl() }}/admin/orderdumps"> Unprocessed order</a></li>
+                            <li><a href="{{ baseUrl() }}/admin/contact_requests"> Contact Requests</a></li>
+                            <li><a href="{{ baseUrl() }}/admin/newsletter"> Newsletter Subscribed</a></li>
+                            <li><a href="{{ baseUrl() }}/admin/purchasecodes"> Purchase Codes</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="{{ baseUrl() }}/admin/logout"><span class="glyphicon glyphicon-off"></span> {{ include(template_from_string(lang.logout)) }} ({{user}})</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+
+        <!-- <div id="footer">
+            <div class="container">
+                <p class="text-muted credit">@2015</p>
+            </div>
+        </div> -->
+
+        <script src="{{ baseUrl() }}/js/bootstrap.min.js"></script>
+    </body>
+</html>

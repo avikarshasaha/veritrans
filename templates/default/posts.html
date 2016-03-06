@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+.btn{
+	padding: 6px 12px;
+    margin: 0px; 
+}
+.table { border: 1px solid #ddd; }
+</style>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th><span class="glyphicon glyphicon-th-large"></span></th>
+					<th colspan="2">English</th>
+					<th colspan="2">Dari/Pashto</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for post in posts %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td><a href="{{ baseUrl() }}/post/{{post.id}}">{{post.english_title}}</a></td>
+					<td><a href="{{ baseUrl() }}/post/{{post.id}}" class="btn btn-info btn-raised">View<div class="ripple-wrapper"></div></a></td>
+					<td><a href="{{ baseUrl() }}/post/{{post.id}}">{{post.farsi_title}}</a></td>
+					<td><a href="{{ baseUrl() }}/post/{{post.id}}" class="btn btn-info btn-raised">View<div class="ripple-wrapper"></div></a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<ul class="pagination">
+			<li class="{% if page == 1 %}disabled{% endif %}">
+				{% if page > 1 %}
+				<a href="{{ baseUrl() }}/{{page-1}}">&laquo;</a>
+				{% else %}
+				<span>&laquo;</span>
+				{% endif %}
+			</li>
+			{% for i in 1..pages %}
+			<li class="{% if page == i %}active{% endif %}">
+				<a href="{{ baseUrl() }}/{{i}}">{{i}}</a>
+			</li>
+			{% endfor %}
+			<li class="{% if page == pages %}disabled{% endif %}">
+				{% if page < pages %}
+				<a href="{{ baseUrl() }}/{{page+1}}">&raquo;</a>
+				{% else %}
+				<span>&raquo;</span>
+				{% endif %}
+			</li>
+		</ul>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,299 @@
+{% set title = "Home" %}
+{% set metas = {
+    "keywords": "HTML, CSS, XML, XHTML, JavaScript",
+    "description": "Free Web tutorials on HTML and CSS" } 
+%}
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="banner">
+ 
+
+    <div id="owl-demo3" class="owl-carousel owl-theme">
+      <div class="item"><img src="img/slid1.jpg" alt="banner"></div>
+   	  <div class="item"><img src="img/slid2.jpg" alt="banner"></div>
+      <div class="item"><img src="img/slid1.jpg" alt="banner"></div>
+      <div class="item"><img src="img/slid2.jpg" alt="banner"></div>
+    </div>
+
+
+</div>
+<div class="container">
+  <div class="page_title1 bottom_space">
+    <h1 style="font-size:48px;">Check Our Email Design Services</h1>
+    <h2>We provide Three type of service</h2>
+  </div>
+  <div class="services_box_main orange_bg">
+    <div class="services_icon orange_bg"> <img src="img/icon_1.png" alt="Fresh Email Design & Coding" /> </div>
+    <div class="service_name">Fresh Email
+      Design & Coding </div>
+  </div>
+  <div class="services_box_main blue_bg">
+    <div class="services_icon blue_bg2"> <img src="img/icon_2.png" alt="You Design We code" /> </div>
+    <div class="service_name">You Design
+      We code</div>
+  </div>
+  <div class="services_box_main black_bg">
+    <div class="services_icon black_bg"> <img src="img/icon_3.png" alt="Existing Email Editing" /> </div>
+    <div class="service_name">Existing
+      Email Editing</div>
+  </div>
+</div>
+<div class="clr"></div>
+<div class="bg_2">
+  <div class="container">
+    <div class="page_title1 ">
+      <h1 class="orange_text">Price List</h1>
+    </div>
+    <div class="price_box_main">
+      <div class="price_box_title"> Fresh Email
+        Design & Coding </div>
+      <div class="price_box_content">
+        <ul>
+          <li><i class="fa fa-check-circle fl-lg"></i> Fully Hand coded top quality email </li>
+          <li><i class="fa fa-check-circle fl-lg"></i> Delivery within 3 days </li>
+          <li><i class="fa fa-check-circle fl-lg"></i> Free integration to email software </li>
+          <li><i class="fa fa-check-circle fl-lg"></i> We use Litmus for best compatibility </li>
+          <li><i class="fa fa-check-circle fl-lg"></i> 100% money back guarantee and strict NDA Term </li>
+          <li><i class="fa fa-check-circle fl-lg"></i> <a href="{{ baseUrl() }}/price" target="_self" style="color:#2448bd;">Read More Features Here >></a> </li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+      <div class="price_btn_box">
+        <div class="price_tag">$125</div>
+        <div class="price_date">Delivery within 3 days </div>
+        <a href="{{ baseUrl() }}/order#package=1" class="price_btn">ORDER NOW</a> </div>
+    </div>
+    <div class="price_box_main space2">
+      <div class="price_box_title"> You Design 
+        We Code </div>
+      <div class="price_box_content">
+        <ul>
+          <li><i class="fa fa-check-circle fl-lg"></i> Fully Hand coded top quality email </li>
+          <li><i class="fa fa-check-circle fl-lg"></i> Delivery within 24 hour</li>
+          <li><i class="fa fa-check-circle fl-lg"></i> Free integration to email software </li>
+          <li><i class="fa fa-check-circle fl-lg"></i> We use Litmus for best compatibility </li>
+          <li><i class="fa fa-check-circle fl-lg"></i> 100% money back guarantee and strict NDA Term</li>
+          <li><i class="fa fa-check-circle fl-lg"></i> <a href="{{ baseUrl() }}/price" target="_self" style="color:#2448bd;">Read More Features Here >></a> </li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+      <div class="price_btn_box">
+        <div class="price_tag">$65</div>
+        <div class="price_date">Delivery within 24 hour </div>
+        <a href="{{ baseUrl() }}/order#package=2" class="price_btn">ORDER NOW</a> </div>
+    </div>
+    <div class="price_box_main">
+      <div class="price_box_title"> Existing 
+        Email Editing </div>
+      <div class="price_box_content">
+        <ul>
+          <li><i class="fa fa-check-circle fl-lg"></i> Fully Hand coded quality email </li>
+          <li><i class="fa fa-check-circle fl-lg"></i> Delivery within 24 hour</li>
+          <li><i class="fa fa-check-circle fl-lg"></i> Free integration to email software </li>
+          <li><i class="fa fa-check-circle fl-lg"></i> Litmus report for best compatibility </li>
+          <li><i class="fa fa-check-circle fl-lg"></i> 100% money back guarantee and strict NDA Term</li>
+          <li><i class="fa fa-check-circle fl-lg"></i> <a href="{{ baseUrl() }}/price" target="_self" style="color:#2448bd;">Read More Feature Heres >></a> </li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+      <div class="price_btn_box">
+        <div class="price_tag">$35</div>
+        <div class="price_date">Delivery within 24 hour</div>
+        <a href="{{ baseUrl() }}/order#package=3" class="price_btn">ORDER NOW</a> </div>
+    </div>
+  </div>
+</div>
+<div class="clr"></div>
+<div class="container">
+  <div class="page_box fl">
+    <h2>About Us</h2>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br></p>
+    <div class="profile_box_m">
+    <div class="img_box">
+    <img src="img/demo_img.png" alt="Profile" />
+    </div>
+    <div class="profile_box_m_title">
+    David Smith
+    <span>(Founder)</span>
+    </div>
+     <div class="clr"></div>
+    </div>
+    
+     <div class="profile_box_m">
+    <div class="img_box">
+    <img src="img/demo_img.png" alt="Profile" />
+    </div>
+    <div class="profile_box_m_title">
+    Bikas Mondal
+    <span>(Co-Founder)</span>
+    </div>
+    <div class="clr"></div>
+    </div>
+    
+     <div class="profile_box_m">
+    <div class="img_box">
+    <img src="img/demo_img.png" alt="Profile" />
+    </div>
+    <div class="profile_box_m_title">
+   Toby Walker
+    <span>(Co-Founder)</span>
+    </div>
+     <div class="clr"></div>
+    </div>
+  </div>
+  <div class="page_box fr">
+    <h2>What our client says-</h2>
+    <div id="owl-demo">
+      <div class="item">
+        <div class="testi_box">
+          <div class="profile_box">
+            <div class="profile_img_box"> <img src="img/t1.png" alt="Profile" /> </div>
+            <span style="font-size:18px; font-weight:bold; color:#fe6104;">Simon</span> </div>
+          <p style="font-size:18px;">A perfect job executed by a skilled and professional EDM ninja. Will definitely hire again.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="testi_box">
+          <div class="profile_box">
+            <div class="profile_img_box"> <img src="img/t2.png" alt="Profile" /> </div>
+            <span style="font-size:18px; font-weight:bold; color:#fe6104;">Toby</span> </div>
+          <p style="font-size:18px;">Pleasure to work with and job delivered was excellent. Look forward to working with you in the future.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="testi_box">
+          <div class="profile_box">
+            <div class="profile_img_box"> <img src="img/t3.png" alt="Profile" /> </div>
+            <span style="font-size:18px; font-weight:bold; color:#fe6104;">Dearne</span> </div>
+          <p style="font-size:18px;">As always, its a pleasure dealing with email guy. Will continue to work with him on upcoming jobs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="clr"></div>
+  
+  
+  <div class="client_box ">
+    <h2>Some of companies we served</h2>
+    <div id="owl-demo_3">
+      <div class="item">
+        <img src="img/client3.jpg" alt="Client" />
+      </div>
+      <div class="item">
+         <img src="img/client2.jpg" alt="Client" />
+      </div>
+      <div class="item">
+         <img src="img/client9.jpg" alt="Client" />
+     </div>
+       <div class="item">
+        <img src="img/client1.jpg" alt="Client" />
+      </div>
+      <div class="item">
+         <img src="img/client5.png" alt="Client" />
+      </div>
+      <div class="item">
+         <img src="img/client6.png" alt="Client" />
+      </div>
+      <div class="item">
+         <img src="img/client7.jpg" alt="Client" />
+      </div>
+      <div class="item">
+         <img src="img/client8.jpg" alt="Client" />
+      </div>
+      <div class="item">
+         <img src="img/client4.jpg" alt="Client" />
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+<div class="clr"></div>
+
+<script src="js/jquery-1.9.1.min.js"></script> 
+<script src="js/owl.carousel.js"></script> 
+<script>
+$(document).ready(function() {
+ 
+  $("#owl-demo").owlCarousel({
+ 
+      autoPlay: 3000, //Set AutoPlay to 3 seconds
+ 
+      items : 1,
+      itemsDesktop : [1199,1],
+      itemsDesktopSmall : [979,1],
+    itemsTablet : [768,1]
+ 
+  });
+ 
+});
+</script> 
+
+
+<script>
+$(document).ready(function() {
+ 
+  $("#owl-demo_3").owlCarousel({
+ 
+      autoPlay: 3000, //Set AutoPlay to 3 seconds
+ 
+      items : 5,
+      itemsDesktop : [1199,5],
+      itemsDesktopSmall : [979,5],
+    itemsTablet : [768,3]
+ 
+  });
+ 
+});
+</script> 
+
+
+<script>
+
+
+    $(document).ready(function() {
+     
+      $("#owl-demo3").owlCarousel({
+     
+          navigation : false, // Show next and prev buttons
+          slideSpeed : 300,
+       autoPlay: 3000, 
+          paginationSpeed : 400,
+          singleItem:true
+     
+          // "singleItem:true" is a shortcut for:
+          // items : 1, 
+          // itemsDesktop : false,
+          // itemsDesktopSmall : false,
+          // itemsTablet: false,
+          // itemsMobile : false
+     
+      });
+     
+    });
+
+
+</script>
+
+
+<script src="js/wow.js"></script> 
+<script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       100,
+        callback:     function(box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+ 
+  </script>
+
+  
+{% endblock %}

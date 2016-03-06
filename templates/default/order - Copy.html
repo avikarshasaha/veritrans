@@ -1,0 +1,435 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="inner_header h_bg2">
+      <div class="container">
+    <h1> <i class="fa fa-shopping-cart"></i> Order </h1>
+  </div>
+    </div>
+<div class="clr"></div>
+<section class="white_bg in_top_space">
+<div class="container">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+</section>
+<div class="clr"></div>
+
+<section >
+
+
+<div class="container top_sapace6">
+
+
+
+<div class="frm_title">
+<span>1</span> Choose Your Package
+</div>
+
+<div class="frm_box frm_height">
+<div class="choose_box choose_box1" id="01" >
+<input type="radio" name="package" id="radio1" value="1"/>        
+        <label for="radio1">
+            <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-1x fa-3x c1"></i>
+                <i class="fa fa-circle fa-stack-1x fa-3x c2"></i>
+            </span>
+           <b>Fresh Design & Coding</b>
+        </label>
+</div>
+</div>
+
+
+<div class="frm_box box_space frm_height">
+<div class="choose_box choose_box1" id="02">
+ <input type="radio" name="package" id="radio2" value="2"/>     
+        <label for="radio2">
+            <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-1x fa-3x c1"></i>
+                <i class="fa fa-circle fa-stack-1x fa-3x c2"></i>
+            </span>
+           <b>Your Design We Code</b>
+        </label>
+</div>
+</div>
+
+
+<div class="frm_box frm_height">
+<div class="choose_box choose_box1" id="03">
+ <input type="radio" name="package" id="radio3" value="3"/>     
+        <label for="radio3">
+            <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-1x fa-3x c1"></i>
+                <i class="fa fa-circle fa-stack-1x fa-3x c2"></i>
+            </span>
+           <b>Exisiting Email Editing</b>
+        </label>
+</div>
+</div>
+
+
+
+<div class="frm_title">
+<span>2</span> Provide your details
+</div>
+
+<div class="frm_box">
+<input type="text" placeholder="Name *" required />
+</div>
+
+<div class="frm_box box_space">
+<input type="email" placeholder="Email *" required />
+</div>
+
+<div class="frm_box">
+<input type="text" placeholder="Phone" />
+</div>
+
+
+<div class="frm_box">
+<input type="text" placeholder="Business Name" required />
+</div>
+
+<div class="frm_box box_space">
+<input type="email" placeholder="Website Address" required />
+</div>
+
+<div class="frm_box">
+<input type="text" placeholder="Business Domain / Industry" />
+</div>
+
+
+<div class="frm_box ">
+<textarea placeholder="Do you have any preferable color?"></textarea>
+</div>
+
+<div class="frm_box box_space">
+<textarea placeholder="Any information that you feel important for your email?"></textarea>
+</div>
+
+
+
+<div class="frm_box ">
+<textarea placeholder="Objective of this email"></textarea>
+</div>
+
+
+
+
+<div class="clr"></div>
+
+<div class="frm_box">
+<div class="frm_title">
+<span>3</span> No. Of Emails 
+</div>
+<select class='change' name='someName1' id="someName1">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+				</select>
+</div>
+
+<div class="frm_box box_space">
+<div class="frm_title">
+<span>4</span> Choose Delivery Time 
+</div>
+<select class='change' name='delivery_time' id="delivery_time">
+    <option value="72" data-price-1="0">72 hrs</option>
+    <option value="24" data-price-2="65" data-price-3="35">24 hrs</option>
+    <option value="12" data-price-2="75" data-price-3="45">12 hrs</option>
+    <option value="8" data-price-2="85" data-price-3="55">8 hrs</option>
+</select>
+</div>
+
+<div class="frm_box">
+<div class="frm_title">
+<span>5</span> Layout type
+</div>
+<select class='change' name='someName3' id="someName3">
+					<option value="Responsive"><i class="fa fa-mobile fa-lg"></i> Responsive</option>
+					<option value="Fixed"><i class="fa fa-desktop fa-lg"></i> Fixed</option>
+					<option value="Scalable"><i class="fa fa-arrows-alt fa-lg"></i> Scalable</option>
+				</select>
+</div>
+
+<div class="frm_title">
+<span>6</span> Email software integration if any :
+</div>
+
+<div class="frm_box">
+<div class="choose_box  choose_box2" id="04" >
+<input type="radio" name="" id="radio4" />        
+        <label for="radio4">
+            <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-1x fa-3x c1"></i>
+                <i class="fa fa-circle fa-stack-1x fa-3x c2"></i>
+            </span>
+           <b>No Integration</b>
+        </label>
+</div>
+
+
+
+
+</div>
+
+<div class="frm_box box_space">
+
+<select class='change' name='someName4' id="someName4">
+					<option value="Mailchimp">Mailchimp</option>
+					<option value="Exact Target">Exact Target</option>
+					<option value="Dotmailer">Dotmailer</option>
+				</select>
+</div>
+
+
+<div class="frm_box">
+<input type="text" placeholder="Custom Software" required />
+</div>
+
+<div class="clr"></div>
+
+
+
+<div class="clr"></div>
+<div class="frm_box3">
+<textarea placeholder="Job Details"></textarea>
+</div>
+
+<div class="frm_box ">
+<label class="custom-upload  gray_btn"><input type="file" name="upload_file" />Upload project related files</label>
+<div class="file_type">Layered PSD / AI / EPS / PDF / or zip files.</div>
+
+<div class="file_type2">
+<input type="checkbox" name="option" id="check3" />
+        <label for="check3">
+            <span class="fa-stack">
+                <i class="fa fa-square-o fa-stack-1x fa-lg"></i>
+                <i class="fa fa-check-square fa-stack-1x  fa-lg"></i>
+            </span>
+         I don't want to submit any file for this job.
+        </label>
+
+</div>
+
+
+
+</div>
+
+
+<div class="frm_box3">
+<input type="text" placeholder="Give URL of project file that we can download" />
+</div>
+
+<div class="frm_box">
+<button type="submit" class="orange_btn1">Add To Cart</button>
+</div>
+
+<div class="clr"></div>
+
+</div>
+
+<div class="clr"></div>
+</section>
+
+<div class="clr"></div>
+
+<section class="white_bg in_top_space">
+<div class="container">
+      <div class="page_title1  orange_h1 top_space3">
+    <h1 class="gray_text">Your Order Cart</h1>
+  </div>
+    
+    <div class="box1 job_box1">
+    <div class="orange_title_bg">
+    Job 1
+    <span>(In Process)</span>
+    </div>
+    
+    <div class="gray_bg">
+    1 Email Coding
+    <span>$49</span>
+    </div>
+    
+    <div class="gray_bg">
+    Fixed
+    <span>$0</span>
+    </div>
+    
+    <div class="gray_bg">
+    Subtotal
+    <span>$49</span>
+    </div>
+    
+    <div class="gray_bg_center">
+   Estimated delivery time: 
+ <span>28th May, 8:25 PM | GMT </span> 
+   <div class="clr"></div>
+    </div>
+    
+    <div class="dark_gray_bg">
+    Total
+    <span>$49</span>
+    </div>
+    
+    </div>
+    
+    
+    <div class="box1 ">
+   
+    
+  
+    
+    
+    <div class="orange_title_bg border_buttom_3">
+   Place Your Order Below
+    </div>
+    
+     <div class="gray_bg bg_none">
+    <input type="checkbox" name="option" id="check1" />
+        <label for="check1">
+            <span class="fa-stack">
+                <i class="fa fa-square-o fa-stack-1x fa-lg"></i>
+                <i class="fa fa-check-square fa-stack-1x  fa-lg"></i>
+            </span>
+         I accept the Terms and Conditions.
+        </label>
+    </div>
+    
+     <div class="gray_bg bg_none">
+    <input type="checkbox" name="option2" id="check2" />
+        <label for="check2">
+            <span class="fa-stack">
+                <i class="fa fa-square-o fa-stack-1x fa-lg"></i>
+                <i class="fa fa-check-square fa-stack-1x  fa-lg"></i>
+            </span>
+         I would like to signup for the newsletter.
+        </label>
+    </div>
+    
+      <a href="/" class="gray_btn top_space_btn"> Place your order now!</a>
+    
+    
+    </div>
+      <div class="or_box">Or</div>
+    <div class="box1 ">
+     <a href="/" class="gray_btn orange_bg"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left "></i> Add More Jobs to Cart</a>
+    <div class="m_back">
+    <img src="img/money_back.png" alt="Money Back" />
+    </div>
+    <div class="we_accept_box">
+    <div class="box_title">We accept:</div>
+    <div class="card_box"> <img src="img/card-image.png" alt="card" /> </div>
+     <a href="/" class="gray_btn top_space_btn sm_text1">100% money back guarantee</a>
+    </div>
+    </div>
+    
+    
+    
+    
+    </div>
+    <div class="clr"></div>
+</section>
+<div class="clr"></div>
+
+
+
+
+<script type="text/javascript" >
+	// $('document').ready(function(){
+	// 	$('#someName1').niceselect();
+	// })
+	
+	// $('document').ready(function(){
+	// 	$('#delivery_time').niceselect();
+	// })
+	// $('document').ready(function(){
+	// 	$('#someName3').niceselect();
+	// })
+	// $('document').ready(function(){
+	// 	$('#someName4').niceselect();
+	// })
+</script>
+
+
+<script>
+$(window).on('hashchange', function() {
+  var values = window.location.hash;
+  console.log(values);
+});
+// 1 - Fresh Design & Coding
+// 2 - You Design We Code
+// 3 - Existing Email Editing
+$(".choose_box1 input[name='package']").click(function(event) {
+    console.log($(this).val());
+    // If the button is selected.
+    if ($(this).hasClass("checked")) {
+        // Remove the placeholder.
+        $(this).removeClass("checked");
+        // And remove the selection.
+        $(this).removeAttr("checked");
+    // If the button is not selected.
+    } else {
+        // Remove the placeholder from the other buttons.
+        $(".choose_box1  input[type='radio']").each(function () {
+            $(this).removeClass("checked");
+        });
+        // And add the placeholder to the button.
+        $(this).addClass("checked");
+    }
+    // set logic for Fresh Design & Coding in time
+    if($(this).val() == '1'){
+        $('select#delivery_time').val('');
+        $('select#delivery_time option[value!=72]').hide();
+        $('select#delivery_time option').each(function () {
+            var text = $(this).text();
+            $(this).text( text + '- $'+ $(this).attr('data-price-1'));
+        });
+        
+    } else if($(this).val() == '2') {
+        $('select#delivery_time').val('');
+        $('select#delivery_time option').show();
+        $('select#delivery_time option[value=72]').hide();
+        $('select#delivery_time option').each(function () {
+            var text = $(this).text();
+            $(this).text( text + '- $'+ $(this).attr('data-price-2'));
+        });
+    } else {
+        $('select#delivery_time').val('');
+        $('select#delivery_time option').show();
+        $('select#delivery_time option[value=72]').hide();
+        $('select#delivery_time option').each(function () {
+            var text = $(this).text();
+            $(this).text( text + '- $'+ $(this).attr('data-price-3'));
+        });
+    }
+
+    window.location.hash =  $(this).attr('name') + '=' + encodeURIComponent( $(this).val());
+});
+
+</script>
+
+<script>
+$(".choose_box2 input[type='radio']").click(function(event) {
+    console.log($(this).val());
+    // If the button is selected.
+    if ($(this).hasClass("checked")) {
+        // Remove the placeholder.
+        $(this).removeClass("checked");
+        // And remove the selection.
+        $(this).removeAttr("checked");
+    // If the button is not selected.
+    } else {
+        // Remove the placeholder from the other buttons.
+        $(".choose_box2  input[type='radio']").each(function () {
+            $(this).removeClass("checked");
+        });
+        // And add the placeholder to the button.
+        $(this).addClass("checked");
+    }
+});
+
+
+</script>
+
+{% endblock %}

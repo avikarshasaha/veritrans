@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Payment Gateway</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+              <h1>Backend Application <small>Payment gateway details</small></h1>
+            </div>
+            <div class="well">
+                <div class="row form-inline">
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                          <input type="text" class="form-control js-search-text" placeholder="Search for...">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default js-search" type="button">Go!</button>
+                          </span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                          <input type="text" class="form-control js-currency-text" placeholder="Currency">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default js-currency" type="button">Go!</button>
+                          </span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <button class="btn btn-default js-cancel" type="button">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="no-more-tables" class="js-table">
+                <table class="col-md-12 table-bordered table-striped table-condensed cf">
+                    <thead class="cf">
+                        <tr>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>Description</th>
+                            <th>Branding</th>
+                            <th class="numeric js-rating" data-order="desc">Rating <i class="fa fa-long-arrow-up"></i></th>
+                            <th>Setup Fee</th>
+                            <th>Transaction Fee</th>
+                            <th>Tutorial</th>
+                            <th>Currencies</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div id="page-selection"></div>
+
+        </div>
+        <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://cdn.rawgit.com/botmonster/jquery-bootpag/master/lib/jquery.bootpag.min.js"></script>
+        <script>
+            $('.js-cancel').click(function(){
+                location.reload();
+            });
+
+            $('.js-rating').click(function(){
+                $.getJSON('../api/1/rating/'+$(this).data('order'))
+                    .done(function (data) {
+                        console.log(data);
+                        var html = "";
+                        $.each(data.services, function (key, item) {
+                            html += formatItem(item); 
+                        });
+                        console.log(data.services.length%3 == 0 ? parseInt(data.services.length/3) : parseInt(data.services.length/3) + 1)
+                        $('#page-selection').bootpag({
+                            total: data.services.length%3 == 0 ? parseInt(data.services.length/3) : parseInt(data.services.length/3) + 1
+                        })
+                        $('.js-rating i').removeClass($('.js-rating').data('order') == 'desc' ? 'fa-long-arrow-down' : 'fa-long-arrow-up').addClass($('.js-rating').data('order') == 'desc' ? 'fa-long-arrow-up' : 'fa-long-arrow-down');
+                        $('.js-rating').data('order', $('.js-rating').data('order') == 'desc' ? 'asc' : 'desc');
+                        $(".js-table table>tbody").empty();
+                        $(".js-table table>tbody").append(html);
+                });
+            });
+            
+
+            $('.js-search').click(function(){
+                console.log($('.js-search-text').val());
+                $.getJSON('../api/search/'+ $('.js-search-text').val())
+                    .done(function (data) {
+                        console.log(data);
+                        var html = "";
+                        $.each(data.services, function (key, item) {
+                            html += formatItem(item); 
+                        });
+                        console.log(data.services.length%3 == 0 ? parseInt(data.services.length/3) : parseInt(data.services.length/3) + 1)
+                        $('#page-selection').bootpag({
+                            total: data.services.length%3 == 0 ? parseInt(data.services.length/3) : parseInt(data.services.length/3) + 1
+                        })
+                        $(".js-table table>tbody").empty();
+                        $(".js-table table>tbody").append(html);
+                });
+            });
+
+            $('.js-currency').click(function(){
+                console.log($('.js-currency-text').val());
+                $.getJSON('../api/search/currency/'+ $('.js-currency-text').val())
+                    .done(function (data) {
+                        console.log(data);
+                        var html = "";
+                        $.each(data.services, function (key, item) {
+                            html += formatItem(item); 
+                        });
+                        console.log(data.services.length%3 == 0 ? parseInt(data.services.length/3) : parseInt(data.services.length/3) + 1)
+                        $('#page-selection').bootpag({
+                            total: data.services.length%3 == 0 ? parseInt(data.services.length/3) : parseInt(data.services.length/3) + 1
+                        })
+                        $(".js-table table>tbody").empty();
+                        $(".js-table table>tbody").append(html);
+                });
+            });
+
+            $.getJSON('../api/')
+                .done(function (data) {
+                    var html = "";
+
+                    $.each(data.services, function (key, item) {
+                        html += formatItem(item); 
+                    });
+
+                    $(".js-table table>tbody").empty();
+                    $(".js-table table>tbody").append(html);
+            });
+
+            function formatItem(item) {
+                var currencies = '';
+                $.each(JSON.parse(item.currencies),function( key, value ) {
+                    // console.log(value);
+                    currencies += value+',';
+                }); 
+                return '<tr>'+
+                            '<td>' + item.name + '</td>'+
+                            '<td><img src="'+ item.image +'" class="img-rounded" alt="' + item.name + '" width="100" height=""></td>'+
+                            '<td>' + item.description + '</td>'+
+                            '<td>' + (item.branding == 1 ? 'Yes' : 'No') + '</td>'+
+                            '<td>' + item.rating + '</td>'+
+                            '<td>' + (item.branding == 1 ? 'Yes' : 'No') + '</td>'+
+                            '<td>' + item.transaction_fees + '</td>'+
+                            '<td><a href="' + item.how_to_url + '" target="_blank">Link</a></td>'+
+                            '<td>' + currencies.replace(/(^,)|(,$)/g, "") + '</td>'+
+                        '</tr>';
+            }
+
+        $('#page-selection').bootpag({
+            total: 3
+        }).on("page", function(event, /* page number here */ num){
+                $.getJSON('../api/'+num)
+                    .done(function (data) {
+                        var html = "";
+                        $.each(data.services, function (key, item) {
+                            html += formatItem(item); 
+                        });
+                        $(".js-table table>tbody").empty();
+                        $(".js-table table>tbody").append(html);
+                });
+            });
+
+        </script>
+
+
+    </body>
+</html>

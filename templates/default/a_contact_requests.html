@@ -1,0 +1,33 @@
+{% extends "a_base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h4>Contact Requests</h4></div>
+      <table class="table table-striped">
+        <thead>
+            <tr>
+                <th><span class="glyphicon glyphicon-th-large"></span></th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phobne</th>
+                <th>Message</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in contact_requests %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{row.name}}</td>
+                    <td>{{row.email}}</td>
+                    <td>{{row.phone}}</td>
+                    <td>{{row.message}}</td>
+                    <td>{{row.created_at}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+</div>
+{% endblock %}
