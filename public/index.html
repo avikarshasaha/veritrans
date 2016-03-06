@@ -79,7 +79,7 @@
                         });
                         console.log(data.services.length%3 == 0 ? parseInt(data.services.length/3) : parseInt(data.services.length/3) + 1)
                         $('#page-selection').bootpag({
-                            total: data.services.length%3 == 0 ? parseInt(data.services.length/3) : parseInt(data.services.length/3) + 1
+                            total: 3
                         })
                         $('.js-rating i').removeClass($('.js-rating').data('order') == 'desc' ? 'fa-long-arrow-down' : 'fa-long-arrow-up').addClass($('.js-rating').data('order') == 'desc' ? 'fa-long-arrow-up' : 'fa-long-arrow-down');
                         $('.js-rating').data('order', $('.js-rating').data('order') == 'desc' ? 'asc' : 'desc');
@@ -165,9 +165,7 @@
                         $.each(data.services, function (key, item) {
                             html += formatItem(item); 
                         });
-                        $(this).bootpag({
-                            total: 3
-                        })
+
                         $(".js-table table>tbody").empty();
                         $(".js-table table>tbody").append(html);
                 });
