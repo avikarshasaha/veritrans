@@ -166,7 +166,7 @@
                             html += formatItem(item); 
                         });
                         $(this).bootpag({
-                            total: data.services.length%3 == 0 ? parseInt(data.services.length/3) : parseInt(data.services.length/3) + 1
+                            total: 3
                         })
                         $(".js-table table>tbody").empty();
                         $(".js-table table>tbody").append(html);
