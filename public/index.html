@@ -70,7 +70,8 @@
             });
 
             $('.js-rating').click(function(){
-                $.getJSON('../api/1/rating/'+$(this).data('order'))
+                var order = $(this).data('order') == 'desc' ? 'asc' : 'desc';
+                $.getJSON('../api/1/rating/'+order)
                     .done(function (data) {
                         console.log(data);
                         var html = "";
@@ -81,8 +82,8 @@
                         $('#page-selection').bootpag({
                             total: 3
                         })
-                        $('.js-rating i').removeClass($('.js-rating').data('order') == 'desc' ? 'fa-long-arrow-down' : 'fa-long-arrow-up').addClass($('.js-rating').data('order') == 'desc' ? 'fa-long-arrow-up' : 'fa-long-arrow-down');
-                        $('.js-rating').data('order', $('.js-rating').data('order') == 'desc' ? 'asc' : 'desc');
+                        $('.js-rating i').removeClass(order == 'desc' ? 'fa-long-arrow-down' : 'fa-long-arrow-up').addClass(order == 'desc' ? 'fa-long-arrow-up' : 'fa-long-arrow-down');
+                        $('.js-rating').data('order', order);
                         $(".js-table table>tbody").empty();
                         $(".js-table table>tbody").append(html);
                 });
